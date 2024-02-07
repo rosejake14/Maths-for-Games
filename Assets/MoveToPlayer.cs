@@ -9,15 +9,28 @@ public class MoveToPlayer : MonoBehaviour
     {
         
     }
-    float speed = 0.1f;
-    // Update is called once per frame
-    void Update(float DeltaTime)
+
+    [SerializeField]
+    private float speed = 5.0f;
+
+
+    void Update()
     {
-        MyVector3 cubeLocation = new MyVector3(GameObject.Find("Cube").transform.position.x, GameObject.Find("Cube").transform.position.y, GameObject.Find("Cube").transform.position.z);
+        Vector3 LocationofCube = GameObject.Find("Cube").transform.position;
+        MyVector3 cubeLocation = new MyVector3(LocationofCube.x, LocationofCube.y, LocationofCube.z);
         MyVector3 selfLocation = new MyVector3(transform.position.x, transform.position.y, transform.position.z);
 
-        selfLocation = MyVector3.SubtractVector(cubeLocation, selfLocation).NormalizeMyVector();
+        MyVector3 directionVector = MyVector3.SubtractVector(cubeLocation, selfLocation).NormalizeMyVector();
 
-        transform.position = selfLocation.ToUnityVector() * DeltaTime * speed;
+        Vector3 CubeRef = GameObject.Find("Cube").transform.forward;
+        MyVector3 TargetDirection = new MyVector3(CubeRef.x, CubeRef.y, CubeRef.z);
+
+        if (MyVector3.VectorDot(directionVector, TargetDirection) >= 0.5)
+        {
+            selfLocation = MyVector3.AddVector(directionVector * Time.deltaTime * speed, selfLocation);
+            transform.position = selfLocation.ToUnityVector();
+        }
+
+        
     }
 }

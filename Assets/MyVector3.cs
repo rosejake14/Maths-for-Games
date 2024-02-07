@@ -13,7 +13,7 @@ public class MyVector3
         this.z = z;
     }
 
-    public MyVector3 AddVector(MyVector3 a, MyVector3 b)
+    public static MyVector3 AddVector(MyVector3 a, MyVector3 b)
     {
         MyVector3 rv = new MyVector3(0, 0, 0);
 
@@ -58,7 +58,7 @@ public class MyVector3
         return rv;
     }
 
-    public MyVector3 Scale(MyVector3 vector, float scale)
+    public static MyVector3 Scale(MyVector3 vector, float scale)
     {
         MyVector3 rv = new MyVector3(0,0,0);
 
@@ -67,6 +67,11 @@ public class MyVector3
         rv.z = vector.z * scale;
        
         return rv;
+    }
+
+    public static MyVector3 operator*(MyVector3 v1, float v2)
+    {
+        return Scale(v1, v2);
     }
 
     public MyVector3 Divide(MyVector3 vector, float divisor)
@@ -90,7 +95,7 @@ public class MyVector3
     }
 
 
-    static float VectorDot(MyVector3 v1, MyVector3 v2, bool shouldNormalize = true)
+    public static float VectorDot(MyVector3 v1, MyVector3 v2, bool shouldNormalize = true)
     {
         float rv = .0f;
 

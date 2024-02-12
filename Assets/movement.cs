@@ -28,5 +28,8 @@ public class movement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - (Time.deltaTime * Rspeed), 0);
         }
+
+        Vector3 mousePos = Input.mousePosition;
+        
     }
 }

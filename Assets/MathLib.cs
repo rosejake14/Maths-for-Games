@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MathLib
 {
-   
-    public static float VectorToRadians(Vector3 v)
+    public static float VectorToRadians(Vector2 v)
     {
         float rv = .0f;
 
@@ -21,7 +20,18 @@ public class MathLib
         return rv;
     }
 
-    public static MyVector3 VectorCrossProduct(MyVector3 v1, MyVector3 v2)
+    public static Vector3 EulerAnglesToDirection(Vector3 EulerAngles)
+    {
+        Vector3 rv = new Vector3();
+
+        rv.x = Mathf.Cos(EulerAngles.y) * Mathf.Cos(EulerAngles.x);
+        rv.y = Mathf.Sin(EulerAngles.x);
+        rv.z = Mathf.Cos(EulerAngles.x) * Mathf.Sin(EulerAngles.y);
+
+        return rv;
+    }
+
+    public static MyVector3 VectorCrossProduct(Vector3 v1, Vector3 v2)
     {
         MyVector3 cp = new MyVector3(0, 0, 0);
 

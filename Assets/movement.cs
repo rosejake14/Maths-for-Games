@@ -9,27 +9,44 @@ public class movement : MonoBehaviour
 
     [SerializeField]
     float Rspeed = 1f;
+
+    Vector2 lastMousePos = new Vector2(0,0);
+
     // Update is called once per frame
     void Update()
     {
+
+        Vector3 forwardDirection = MathLib.EulerAnglesToDirection(transform.eulerAngles / (180/Mathf.PI));
+        Vector3 RightDirection = MathLib.EulerAnglesToDirection(Vector3.up, forwardDirection);
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * Time.deltaTime * Mspeed;
+            transform.position += forwardDirection * Time.deltaTime * Mspeed;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * Time.deltaTime * Mspeed;
+            transform.position -= forwardDirection * Time.deltaTime * Mspeed;
         }
         if(Input.GetKey(KeyCode.D))
         {
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + (Time.deltaTime * Rspeed), 0);
+            transform.position += sideDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
         if(Input.GetKey(KeyCode.A)) 
         {
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - (Time.deltaTime * Rspeed), 0);
+            transform.position -= sideDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
 
-        Vector3 mousePos = Input.mousePosition;
-        
+        Vector2 mousePos = Input.mousePosition;
+       
+        Vector2 mouseDelta = new Vector2(0,0);
+
+        mouseDelta = mousePos - lastMousePos;
+
+        lastMousePos = mousePos;
+
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
+
     }
-}
+
+
+    }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,25 +16,24 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 forwardDirection = MathLib.EulerAnglesToDirection(transform.eulerAngles / (180/Mathf.PI));
-        Vector3 RightDirection = MathLib.EulerAnglesToDirection(Vector3.up, forwardDirection);
+        MyVector3 forwardDirection = MathLib.EulerAnglesToDirection(transform.eulerAngles / (180.0f/Mathf.PI));
+        MyVector3 RightDirection = MathLib.VectorCrossProduct(Vector3.up, forwardDirection.ToUnityVector());
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += forwardDirection * Time.deltaTime * Mspeed;
+            transform.position += forwardDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= forwardDirection * Time.deltaTime * Mspeed;
+            transform.position -= forwardDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
         if(Input.GetKey(KeyCode.D))
         {
-            transform.position += sideDirection.ToUnityVector() * Time.deltaTime * Mspeed;
+            transform.position += RightDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
         if(Input.GetKey(KeyCode.A)) 
         {
-            transform.position -= sideDirection.ToUnityVector() * Time.deltaTime * Mspeed;
+            transform.position -= RightDirection.ToUnityVector() * Time.deltaTime * Mspeed;
         }
 
         Vector2 mousePos = Input.mousePosition;
@@ -45,8 +45,7 @@ public class movement : MonoBehaviour
         lastMousePos = mousePos;
 
         transform.eulerAngles = new Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
-
     }
 
 
-    }
+}

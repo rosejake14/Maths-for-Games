@@ -20,13 +20,13 @@ public class MathLib
         return rv;
     }
 
-    public static Vector3 EulerAnglesToDirection(Vector3 EulerAngles)
+    public static MyVector3 EulerAnglesToDirection(Vector3 EulerAngles)
     {
-        Vector3 rv = new Vector3();
+        MyVector3 rv = new MyVector3(0,0,0);
 
-        rv.x = Mathf.Cos(EulerAngles.y) * Mathf.Cos(EulerAngles.x);
-        rv.y = Mathf.Sin(EulerAngles.x);
-        rv.z = Mathf.Cos(EulerAngles.x) * Mathf.Sin(EulerAngles.y);
+        rv.z = Mathf.Cos(EulerAngles.y) * Mathf.Cos(-EulerAngles.x);
+        rv.y = Mathf.Sin(-EulerAngles.x);
+        rv.x = Mathf.Cos(-EulerAngles.x) * Mathf.Sin(EulerAngles.y);
 
         return rv;
     }
@@ -35,9 +35,9 @@ public class MathLib
     {
         MyVector3 cp = new MyVector3(0, 0, 0);
 
-        cp.x = v1.x * v2.z - v1.z * v2.y;
+        cp.x = v1.y * v2.z - v1.z * v2.y;
         cp.y = v1.z * v2.x - v1.x * v2.z;
-        cp.z = v1.x * v2.x - v1.x * v2.z;
+        cp.z = v1.x * v2.y - v1.y * v2.x;
 
         return cp;
     }

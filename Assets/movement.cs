@@ -9,7 +9,7 @@ public class movement : MonoBehaviour
     float Mspeed = 1f;
 
     [SerializeField]
-    float Rspeed = 1f;
+    //float Rspeed = 1f;
 
     Vector2 lastMousePos = new Vector2(0,0);
 

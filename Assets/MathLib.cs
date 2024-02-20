@@ -42,4 +42,13 @@ public class MathLib
         return cp;
     }
 
+    public static Vector3 LinInterpolate(Vector3 v1, Vector3 v2, float t)
+    {
+        Vector3 rv = new Vector3(0, 0, 0);
+
+        rv = v1 * (1.0f - t) + v2 * t;
+
+        return rv;
+    }
+
 }

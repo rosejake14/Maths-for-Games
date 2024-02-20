@@ -74,6 +74,11 @@ public class MyVector3
         return Scale(v1, v2);
     }
 
+    public static MyVector3 operator +(MyVector3 v1, MyVector3 v2)
+    {
+        return AddVector(v1, v2);
+    }
+
     public MyVector3 Divide(MyVector3 vector, float divisor)
     {
         MyVector3 rv = new MyVector3(0, 0, 0);

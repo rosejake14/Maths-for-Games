@@ -475,9 +475,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetLocation: {x: 0, y: 10, z: 20}
-  MatrixTargetLocation: {x: 4.84, y: 20, z: 30}
+  MatrixTargetLocation: {x: 0, y: 0, z: 0}
   yawAngle: 10
+  rollAngle: 0
+  pitchAngle: 0
   scale: 2
+  rotationSpeed: 1
+  LinearInterpolate: 0
+  LinearInterpolateSpeed: 10
 --- !u!65 &977024418
 BoxCollider:
   m_ObjectHideFlags: 0

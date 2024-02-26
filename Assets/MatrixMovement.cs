@@ -85,10 +85,9 @@ public class MatrixMovement : MonoBehaviour
 
             for (int i = 0; i < TransformedVertices.Length; i++)
             {
-                //TRANSLATE ROTATE SCALE
-                //TRANSLATE
-                Vector4 TranslationModelSpaceV = new Vector4(ModelSpaceVertices[i].x, ModelSpaceVertices[i].y, ModelSpaceVertices[i].z, 1);
-                TransformedVertices[i] = transMatrix * TranslationModelSpaceV;
+                //SRT
+                //SCALE
+                TransformedVertices[i] = scaleMatrix * ModelSpaceVertices[i];
 
                 //ROTATE
                 //TransformedVertices[i] = rotMatrix * TransformedVertices[i];
@@ -97,8 +96,9 @@ public class MatrixMovement : MonoBehaviour
                 Vector3 YawedV = yawMatrix * PitchedV;
                 TransformedVertices[i] = YawedV;
 
-                //SCALE
-                TransformedVertices[i] = scaleMatrix * TransformedVertices[i];
+                //TRANSLATE
+                Vector4 TranslationModelSpaceV = new Vector4(TransformedVertices[i].x, TransformedVertices[i].y, TransformedVertices[i].z, 1);
+                TransformedVertices[i] = transMatrix * TranslationModelSpaceV;
             }
 
             MeshFilter meshFilter = GetComponent<MeshFilter>();

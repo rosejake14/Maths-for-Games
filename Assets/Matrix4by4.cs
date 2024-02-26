@@ -66,6 +66,18 @@ public class Matrix4by4
 
     public float[,] values;
 
+    public static Matrix4by4 Identity
+    {
+        get
+        {
+            return new Matrix4by4(
+                new Vector4(1, 0, 0, 0),
+                new Vector4(0, 1, 0, 0),
+                new Vector4(0, 0, 1, 0),
+                new Vector4(0, 0, 0, 1));
+        }
+    }
+
     public static Vector4 operator *(Matrix4by4 lhs, Vector4 vector)
     {
         Vector4 rv = new Vector4();
@@ -78,4 +90,16 @@ public class Matrix4by4
         return rv;
     }
 
+    public static Matrix4by4 operator *(Matrix4by4 lhs, Matrix4by4 rhs)
+    {
+        Matrix4by4 rv = new Matrix4by4(Vector4.zero, Vector4.zero, Vector4.zero, Vector4.zero);
+
+        
+
+        return rv;
+    }
+
+    
+
 }
+

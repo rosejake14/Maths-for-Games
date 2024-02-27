@@ -94,12 +94,46 @@ public class Matrix4by4
     {
         Matrix4by4 rv = new Matrix4by4(Vector4.zero, Vector4.zero, Vector4.zero, Vector4.zero);
 
-        
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                rv.values[j, i] = (lhs.values[j, 0] * rhs.values[0, i]) + (lhs.values[j, 1] * rhs.values[1, i]) + (lhs.values[j, 2] * rhs.values[2, i]) + (lhs.values[j, 3] * rhs.values[3, i]);
+            }
+        }
 
         return rv;
     }
 
-    
+    public Matrix4by4 TranslationInverse()
+    {
+        Matrix4by4 rv = Identity;
+        rv.values[0,3] = -values[0,3];
+        rv.values[1,3] = -values[1,3];
+        rv.values[2,3] = -values[2,3];
+        return rv;
+    }
 
+    public Matrix4by4 ScaleInverse()
+    {
+        Matrix4by4 rv = Identity;
+
+        rv.values[0, 0] = 1.0f / values[0, 0];
+        rv.values[1, 1] = 1.0f / values[1, 1];
+        rv.values[1, 1] = 1.0f / values[2, 2];
+
+        return rv;
+    }
+    public Matrix4by4 RotationInverse()
+    {
+        return new Matrix4by4(GetRow(0), GetRow(1), GetRow(2), GetRow(3));
+    }
+
+    public Vector4 GetRow(int index)
+    {
+        return new Vector4(values[index, 0], values[index, 1], values[index, 2], values[index, 3]);
+    }
+
+    
 }
 

@@ -51,4 +51,67 @@ public class AABB
     {
         get { return MinExtent.z; }
     }
+
+    public static bool LineInetersection(AABB Box, Vector3 StartPoint, Vector3 EndPoint, out Vector3 IntersectionPoint)
+    {
+        float Lowest = 0.0f;
+        float Highest = 1.0f;
+
+        IntersectionPoint = Vector3.zero;
+
+        if (!IntersectingAxis(Vector3.right, Box, StartPoint, EndPoint, ref Lowest, ref Highest))
+        {
+            return false;
+        }
+        if (!IntersectingAxis(Vector3.up, Box, StartPoint, EndPoint, ref Lowest, ref Highest))
+        {
+            return false;
+        }
+        if (!IntersectingAxis(Vector3.forward, Box, StartPoint, EndPoint, ref Lowest, ref Highest))
+        {
+            return false;
+        }
+
+        IntersectionPoint = MathLib.LinInterpolate(StartPoint, EndPoint, Lowest);
+
+        return true;
+    }
+
+    public static bool IntersectingAxis(Vector3 Axis, AABB Box, Vector3 StartingPoint, Vector3 EndPoint, ref float Lowest, ref float Highest)
+    {
+        float Minimum = 0.0f, Maximum = 1.0f;
+        if (Axis == Vector3.right)
+        {
+            Minimum = (Box.Left - StartingPoint.x) / (EndPoint.x - StartingPoint.x);
+            Maximum = (Box.Right - StartingPoint.x) / (EndPoint.x - StartingPoint.x);
+        }
+        else if (Axis == Vector3.up)
+        {
+            Minimum = (Box.Bottom - StartingPoint.y) / (EndPoint.y - StartingPoint.y);
+            Maximum = (Box.Top - StartingPoint.y) / (EndPoint.y - StartingPoint.y);
+        }
+        else if (Axis == Vector3.forward)
+        {
+            Minimum = (Box.Back - StartingPoint.z) / (EndPoint.z - StartingPoint.z);
+            Maximum = (Box.Front - StartingPoint.z) / (EndPoint.z - StartingPoint.z);
+        }
+
+        if (Maximum < Minimum)
+        {
+            float temp = Maximum;
+            Maximum = Minimum;
+            Minimum = temp;
+        }
+
+        if (Maximum < Lowest || Minimum > Highest)
+            return false;
+
+        Lowest = Mathf.Max(Minimum, Lowest);
+        Highest = Mathf.Max(Maximum, Highest);
+
+        if(Lowest > Highest)
+            return false;
+
+        return true;
+    }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MyVector3
@@ -74,6 +75,17 @@ public class MyVector3
         return Scale(v1, v2);
     }
 
+    public static MyVector3 operator -(MyVector3 v1, MyVector3 v2)
+    {
+        return SubtractVector(v1, v2);
+    }
+
+    public static MyVector3 operator -(MyVector3 v1)
+    {
+        MyVector3 x = new MyVector3(0,0,0);
+        return SubtractVector(x, v1);
+    }
+
     public static MyVector3 operator +(MyVector3 v1, MyVector3 v2)
     {
         return AddVector(v1, v2);
@@ -118,5 +130,7 @@ public class MyVector3
 
         return rv;
     }
+
+    
 
 }

@@ -90,8 +90,8 @@ public class Quat
     {
         Quat rv = new Quat();
 
-        rv.w = (lhs.w * rhs.w) - MyVector3.VectorDot(lhs.v, rhs.v);
-        rv.v = (rhs.v * rhs.w) + (lhs.v * rhs.w) + (MathLib.VectorCrossProduct(rhs.v.ToUnityVector(), lhs.v.ToUnityVector()));
+        rv.w = (lhs.w * rhs.w) - MyVector3.VectorDot(lhs.v, rhs.v, false);
+        rv.v = (rhs.v * lhs.w) + (lhs.v * rhs.w) + (MathLib.VectorCrossProduct(rhs.v.ToUnityVector(), lhs.v.ToUnityVector()));
 
         return rv;
 

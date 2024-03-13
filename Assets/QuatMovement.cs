@@ -15,7 +15,7 @@ public class QuatMovement : MonoBehaviour
     Vector3 OriginRotationPoint = new Vector3();
 
     [SerializeField]
-    float MovementMultiplier = 1.0f;
+    public float MovementMultiplier = 1.0f;
 
     // Update is called once per frame
     void Update()

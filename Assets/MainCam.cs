@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
 public class MainCam : MonoBehaviour
 {
     [SerializeField]
@@ -24,14 +23,16 @@ public class MainCam : MonoBehaviour
     [SerializeField]
     private Vector3 LinearTarget = new Vector3();
     [SerializeField]
-    bool LinearInterpolate = false;
+    bool LinearInterpolate = true;
     [SerializeField]
     float LinearInterpolateSpeed = 1.0f;
+    [SerializeField]
+    private Vector3 OriginTarget = new Vector3(0, 100, 0);
 
     MyVector3 MyPosition;
 
     [SerializeField]
-    int followingPlanet = 1;
+    int followingPlanet = -1;
     [SerializeField]
     GameObject Planet1;
     [SerializeField]
@@ -44,7 +45,7 @@ public class MainCam : MonoBehaviour
     void Start()
     {
         MyPosition = new MyVector3(Position.x, Position.y, Position.z);
-
+        LinearTarget = OriginTarget;
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         meshFilter.sharedMesh = Instantiate(myMesh);
         ModelSpaceVertices = meshFilter.sharedMesh.vertices;
@@ -62,17 +63,22 @@ public class MainCam : MonoBehaviour
 
         transform.eulerAngles = new Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
 
-        if(Input.GetKeyDown(KeyCode.E)) { followingPlanet = 1; }
-        if (Input.GetKeyDown(KeyCode.R)) { followingPlanet = 2; }
-        if (Input.GetKeyDown(KeyCode.T)) { followingPlanet = 3; }
+        if (Input.GetKeyDown(KeyCode.Escape)) { followingPlanet = -1; LinearInterpolateSpeed = 3.0f;  }
+        if (Input.GetKeyDown(KeyCode.E)) { followingPlanet = 1; LinearInterpolateSpeed = Planet1.GetComponent<QuatMovement>().MovementMultiplier * 10; }
+        if (Input.GetKeyDown(KeyCode.R)) { followingPlanet = 2; LinearInterpolateSpeed = Planet2.GetComponent<QuatMovement>().MovementMultiplier * 10; }
+        if (Input.GetKeyDown(KeyCode.T)) { followingPlanet = 3; LinearInterpolateSpeed = Planet3.GetComponent<QuatMovement>().MovementMultiplier * 10; }
 
         switch (followingPlanet)
         {
+            case (-1):
+                LinearTarget = OriginTarget; 
+                break;
             case (1):
                 LinearTarget = Planet1.transform.position;
                 break;
             case (2):
                 LinearTarget = Planet2.transform.position;
+                
                 break;
             case (3):
                 LinearTarget = Planet3.transform.position;

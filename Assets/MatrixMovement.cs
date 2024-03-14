@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
 public class MatrixMovement : MonoBehaviour
 {
     [SerializeField]
@@ -51,8 +50,8 @@ public class MatrixMovement : MonoBehaviour
     {
         
             Rotation.x += Time.deltaTime * rotationSpeed;
-            Rotation.y += Time.deltaTime * rotationSpeed;
-            Rotation.z += Time.deltaTime * rotationSpeed;
+           // Rotation.y += Time.deltaTime * rotationSpeed;
+            //Rotation.z += Time.deltaTime * rotationSpeed;
 
             
 

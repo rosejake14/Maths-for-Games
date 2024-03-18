@@ -153,7 +153,7 @@ Transform:
   m_GameObject: {fileID: 230064770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,16 +191,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 0}
-  MovementMultiplier: 1
-  orbitSize: 10.2
+  orbitSize: 100
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 1
   ParentPlanet: {fileID: 536974846}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &230064774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -305,16 +310,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 100}
-  MovementMultiplier: 0.1
   orbitSize: 100
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 0
   ParentPlanet: {fileID: 1860993159}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &536974848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -395,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 536974846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -572,7 +582,7 @@ Transform:
   m_GameObject: {fileID: 709925500}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,16 +620,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 0}
-  MovementMultiplier: 1
-  orbitSize: 14.26
+  orbitSize: 75
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 1
   ParentPlanet: {fileID: 1632342279}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &709925504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1100,16 +1115,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginRotationPoint: {x: 0, y: 0, z: 20}
-  MovementMultiplier: 1
-  orbitSize: 20
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
+  OriginRotationPoint: {x: 0, y: 0, z: 0}
+  orbitSize: 50
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 0
   ParentPlanet: {fileID: 1860993159}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &1130065815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1190,7 +1210,7 @@ Transform:
   m_GameObject: {fileID: 1130065813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1696,7 +1716,7 @@ Transform:
   m_GameObject: {fileID: 1441664129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.3400002}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1714,16 +1734,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 0}
-  MovementMultiplier: 1
-  orbitSize: 5
+  orbitSize: 50
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 1
   ParentPlanet: {fileID: 1130065813}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!114 &1441664136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,16 +1802,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 50}
-  MovementMultiplier: 0.5
-  orbitSize: 50
+  orbitSize: 75
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 0
   ParentPlanet: {fileID: 1860993159}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &1632342281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1867,7 +1897,7 @@ Transform:
   m_GameObject: {fileID: 1632342279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2058,16 +2088,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UTransform: {x: 0, y: 0, z: 0}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
   OriginRotationPoint: {x: 0, y: 0, z: 0}
-  MovementMultiplier: 0.003
   orbitSize: 1
   axis: 1
+  angle: 0
+  RotationAngle: 0
+  RotationPeriod: 1
   isMoon: 0
   ParentPlanet: {fileID: 0}
   PlanetScale: 2
-  Position: {x: 0, y: 0, z: 0}
   myMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   axialTiltAngle: 10
+  Period: 1
 --- !u!65 &1860993161
 BoxCollider:
   m_ObjectHideFlags: 0

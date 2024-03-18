@@ -64,9 +64,9 @@ public class MainCam : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
 
         if (Input.GetKeyDown(KeyCode.Escape)) { followingPlanet = -1; LinearInterpolateSpeed = 3.0f;  }
-        if (Input.GetKeyDown(KeyCode.E)) { followingPlanet = 1; LinearInterpolateSpeed = Planet1.GetComponent<QuatMovement>().MovementMultiplier * 10; }
-        if (Input.GetKeyDown(KeyCode.R)) { followingPlanet = 2; LinearInterpolateSpeed = Planet2.GetComponent<QuatMovement>().MovementMultiplier * 10; }
-        if (Input.GetKeyDown(KeyCode.T)) { followingPlanet = 3; LinearInterpolateSpeed = Planet3.GetComponent<QuatMovement>().MovementMultiplier * 10; }
+        if (Input.GetKeyDown(KeyCode.E)) { followingPlanet = 1; LinearInterpolateSpeed = Planet1.GetComponent<QuatMovement>().Period * 10; }
+        if (Input.GetKeyDown(KeyCode.R)) { followingPlanet = 2; LinearInterpolateSpeed = Planet2.GetComponent<QuatMovement>().Period * 10; }
+        if (Input.GetKeyDown(KeyCode.T)) { followingPlanet = 3; LinearInterpolateSpeed = Planet3.GetComponent<QuatMovement>().Period * 10; }
 
         switch (followingPlanet)
         {

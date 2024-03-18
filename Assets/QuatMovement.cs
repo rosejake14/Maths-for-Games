@@ -5,12 +5,15 @@ using UnityEngine.UIElements;
 
 public class QuatMovement : MonoBehaviour
 {
+    [SerializeField]
+    public Vector3 UTransform = new Vector3(0, 0, 0);
+    [SerializeField]
+    public Vector3 URotation = new Vector3(0, 0, 0);
+    [SerializeField]
+    public Vector3 UScale = new Vector3(0, 0, 0);
 
     [SerializeField]
     Vector3 OriginRotationPoint = new Vector3();
-
-    [SerializeField]
-    public float MovementMultiplier = 1.0f;
 
     [SerializeField]
     public float orbitSize = 1.0f;
@@ -18,7 +21,14 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public float axis = 1.0f;
 
-    float angle = 0;
+    [SerializeField]
+    float angle = 0f;
+
+    [SerializeField]
+    float RotationAngle = 0f;
+
+    [SerializeField]
+    float RotationPeriod = 1.0f;
 
     [SerializeField]
     bool isMoon = false;
@@ -29,15 +39,15 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     float PlanetScale = 2.0f;
 
-    [SerializeField]
-    private Vector3 Position = new Vector3();
-
     private Vector3[] ModelSpaceVertices;
 
     public Mesh myMesh;
 
     [SerializeField]
     float axialTiltAngle = 10.0f;
+
+    [SerializeField]
+    public float Period = 1.0f;
 
     void Start()
     {
@@ -54,10 +64,21 @@ public class QuatMovement : MonoBehaviour
         }
 
         //Quat Movement Rotations
-        angle += Time.deltaTime * MovementMultiplier;
+        //Local Rotation Period (Axial Tilt)
+        RotationAngle += Time.deltaTime * RotationPeriod;
 
+        Quat Orbit = new Quat(RotationAngle, new MyVector3(0, 1, 0));
+
+        Quat AxialTilt = new Quat(axialTiltAngle, new MyVector3(1, 0, 0));
+        Quat CombinedQuat = AxialTilt * Orbit;
+        Matrix4by4 RotationMatrix = CombinedQuat.QuatToMatrix();
+
+
+        //World Rotation Period (Orbit)
+
+        angle += Time.deltaTime * Period;
         Quat q = new Quat(angle, new MyVector3(0, 1, 0));
-
+        
         MyVector3 p = new MyVector3(orbitSize, 0, 0);
 
         Quat K = new Quat(p);
@@ -66,8 +87,7 @@ public class QuatMovement : MonoBehaviour
         
         MyVector3 newP = newK.GetAxis();
 
-        Matrix4by4 myTransform = newK.QuatToMatrix();
-        //Matrix4by4 myTransform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.transform.position);
+        Matrix4by4 Transform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.transform.position); //Make all the transforms my own transforms instead of using unitys built in ones.
 
         //if(ParentPlanet)
         //{ transform.position = newP.ToUnityVector() + ParentPlanet.transform.position; }
@@ -76,14 +96,12 @@ public class QuatMovement : MonoBehaviour
 
         Vector3[] TransformedVertices = new Vector3[ModelSpaceVertices.Length];
 
-        Matrix4by4 axialTilt = Matrix4by4.CreatePitchMatrix(axialTiltAngle);
-
         Matrix4by4 Scale = Matrix4by4.CreateScaleMatrix(PlanetScale);
 
         // Matrix4by4 T = myTransform;
         // Matrix4by4 R = yawMatrix * (axialTilt * rollMatrix);
 
-        Matrix4by4 TransformedMatrix = Scale * axialTilt * myTransform;// * (axialTilt * Scale);
+        Matrix4by4 TransformedMatrix = Transform * (RotationMatrix * Scale);// * (axialTilt * Scale);
 
         for (int i = 0; i < TransformedVertices.Length; i++)
         {

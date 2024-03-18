@@ -141,6 +141,46 @@ public class Quat
 
         return dT * q;
     }
+
+    public Matrix4by4 QuatToMatrix()
+    {
+        Matrix4by4 rv = Matrix4by4.Identity;
+
+        float xx = v.x * v.x;
+        float xy = v.x * v.y;
+        float xz = v.x * v.z;
+        float xw = v.x * w;
+
+        float yy = v.y * v.y;
+        float yz = v.y * v.z;
+        float yw = v.y * w;
+
+        float zz = v.z * v.z;
+        float zw = v.z * w;
+
+
+        rv.values[0, 0] = 1 - 2*(yy + zz);
+        rv.values[1, 0] = 2*(xy - zw);
+        rv.values[2, 0] = 2*(xz + yw);
+        rv.values[3, 0] = 0;
+
+        rv.values[0, 1] = 2*(xy + zw);
+        rv.values[1, 1] = 1 - 2 * (xx + zz);
+        rv.values[2, 1] = 2 * (yz - xw);
+        rv.values[3, 1] = 0;
+
+        rv.values[0, 2] = 2 * (xz - yw);
+        rv.values[1, 2] = 2*(yz + xw);
+        rv.values[2, 2] = 1 - 2*(xx + yy);
+        rv.values[3, 2] = 0;
+
+        rv.values[0, 3] = 0;
+        rv.values[1, 3] = 0;
+        rv.values[2, 3] = 0;
+        rv.values[3, 3] = 1;
+
+        return rv.RotationInverse();
+    }
 }
 
 

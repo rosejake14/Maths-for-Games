@@ -134,6 +134,63 @@ public class Matrix4by4
         return new Vector4(values[index, 0], values[index, 1], values[index, 2], values[index, 3]);
     }
 
-    
+    public static Matrix4by4 CreateRollMatrix(float rollAngle)
+    {
+        Matrix4by4 rv = new Matrix4by4(
+                new Vector3(Mathf.Cos(rollAngle), Mathf.Sin(rollAngle), 0),
+                new Vector3(-Mathf.Sin(rollAngle), Mathf.Cos(rollAngle), 0),
+                new Vector3(0, 0, 1),
+                Vector3.zero
+                );
+        return rv;
+    }
+    public static Matrix4by4 CreatePitchMatrix(float pitchAngle)
+    {
+        Matrix4by4 rv = new Matrix4by4(
+                new Vector3(1, 0, 0),
+                new Vector3(0, Mathf.Cos(pitchAngle), Mathf.Sin(pitchAngle)),
+                new Vector3(0, -Mathf.Sin(pitchAngle), Mathf.Cos(pitchAngle)),
+                Vector3.zero
+                );
+        return rv;
+    }
+    public static Matrix4by4 CreateYawMatrix(float yawAngle)
+    {
+        Matrix4by4 rv = new Matrix4by4(
+                new Vector3(Mathf.Cos(yawAngle), 0, -Mathf.Sin(yawAngle)),
+                new Vector3(0, 1, 0),
+                new Vector3(Mathf.Sin(yawAngle), 0, Mathf.Cos(yawAngle)),
+                Vector3.zero
+                );
+        return rv;
+    }
+
+    public static Matrix4by4 CreateScaleMatrix(float Scale)
+    {
+        Matrix4by4 rv = new Matrix4by4(new Vector3(1, 0, 0) * Scale, new Vector3(0, 1, 0) * Scale, new Vector3(0, 0, 1) * Scale, Vector3.zero);
+
+        return rv;
+    }
+
+    public static Matrix4by4 CreateTranslationMatrix(Vector3 Position)
+    {
+        Matrix4by4 rv = new Matrix4by4(
+                new Vector4(1, 0, 0, 0),
+                new Vector4(0, 1, 0, 0),
+                new Vector4(0, 0, 1, 0),
+                new Vector4(Position.x, Position.y, Position.z, 1));
+        return rv;
+    }
+
+    public static Matrix4by4 CombineMatrix(Matrix4by4 Translation, Matrix4by4 Yaw, Matrix4by4 Pitch, Matrix4by4 Roll, Matrix4by4 Scale)
+    {
+        Matrix4by4 T = Translation;
+        Matrix4by4 R = Yaw * (Pitch * Roll);
+        Matrix4by4 S = Scale;
+
+        Matrix4by4 rv = T * (R * S);
+
+        return rv;
+    }
 }
 

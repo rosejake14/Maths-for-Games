@@ -100,43 +100,43 @@ public class MatrixMovement : MonoBehaviour
 
              Matrix4by4 CombinedMatrix = T * (R * S);
 
-            if (LinearInterpolate)
-            {
-                if (transform.position != LinearTarget)
-                {
-                    transform.position = MathLib.LinInterpolate(transform.position, LinearTarget, Time.deltaTime * LinearInterpolateSpeed);
-                }
-                else
-                {
-                    LinearTarget = newLinLocation();
-                }
-                MyPosition = new MyVector3(transform.position.x, transform.position.y, transform.position.z);
-            }
-            else
-            {
+            //if (LinearInterpolate)
+            //{
+            //    if (transform.position != LinearTarget)
+            //    {
+            //        transform.position = MathLib.LinInterpolate(transform.position, LinearTarget, Time.deltaTime * LinearInterpolateSpeed);
+            //    }
+            //    else
+            //    {
+            //        LinearTarget = newLinLocation();
+            //    }
+            //    MyPosition = new MyVector3(transform.position.x, transform.position.y, transform.position.z);
+            //}
+            //else
+            //{
                 for (int i = 0; i < TransformedVertices.Length; i++)
                 {
 
-                    AABB TheBox = new AABB(new Vector3(0, 0, 0), new Vector3(3, 3, 3));
+                    //AABB TheBox = new AABB(new Vector3(0, 0, 0), new Vector3(3, 3, 3));
 
-                    Vector3 GlobalLineStart = new Vector3(-2, -2, -2);
-                    Vector3 GlobalLineEnd = new Vector3(3, 4, 5);
+                    //Vector3 GlobalLineStart = new Vector3(-2, -2, -2);
+                    //Vector3 GlobalLineEnd = new Vector3(3, 4, 5);
 
-                    Matrix4by4 InverseMatrix = S.ScaleInverse() * (R.RotationInverse() * T.TranslationInverse());
+                    //Matrix4by4 InverseMatrix = S.ScaleInverse() * (R.RotationInverse() * T.TranslationInverse());
 
-                    Vector3 LocalStart = InverseMatrix * GlobalLineStart;
-                    Vector3 localEnd = InverseMatrix * GlobalLineEnd;
+                    //Vector3 LocalStart = InverseMatrix * GlobalLineStart;
+                    //Vector3 localEnd = InverseMatrix * GlobalLineEnd;
 
-                    Vector3 intersection;
-                    if (AABB.LineInetersection(TheBox, LocalStart, localEnd, out intersection))
-                    {
-                        Debug.Log("Intersecting, Local Point: " + intersection);
-                        Debug.Log("Globally at: " + (CombinedMatrix * intersection));
-                    }
-                    else
-                    {
-                        Debug.Log("This did not intersect.");
-                    }
+                    //Vector3 intersection;
+                    //if (AABB.LineInetersection(TheBox, LocalStart, localEnd, out intersection))
+                    //{
+                    //    Debug.Log("Intersecting, Local Point: " + intersection);
+                    //    Debug.Log("Globally at: " + (CombinedMatrix * intersection));
+                    //}
+                    //else
+                    //{
+                    //    Debug.Log("This did not intersect.");
+                    //}
                     Vector4 TranslationModelSpaceV = new Vector4(ModelSpaceVertices[i].x, ModelSpaceVertices[i].y, ModelSpaceVertices[i].z, 1);
                     TransformedVertices[i] = CombinedMatrix * TranslationModelSpaceV;
 
@@ -166,15 +166,15 @@ public class MatrixMovement : MonoBehaviour
 
                 meshFilter.sharedMesh.RecalculateNormals();
                 meshFilter.sharedMesh.RecalculateBounds();
-            }
+            //}
     }
 
 
-    Vector3 newLinLocation()
-    {
-        Vector3 rv = new Vector3(Random.Range(-10,10), Random.Range(0, 10), Random.Range(-10, 10));
+    //Vector3 newLinLocation()
+    //{
+    //    Vector3 rv = new Vector3(Random.Range(-10,10), Random.Range(0, 10), Random.Range(-10, 10));
 
-        return rv;
-    }
+    //    return rv;
+    //}
 
 }

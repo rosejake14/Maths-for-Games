@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[ExecuteInEditMode]
 public class QuatMovement : MonoBehaviour
 {
     [SerializeField]
@@ -12,7 +13,11 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public Vector3 UScale = new Vector3(0, 0, 0);
 
-    [SerializeField]
+    private MyVector3 MTransform;
+    private MyVector3 MRotation;
+    private MyVector3 MScale;
+
+[SerializeField]
     Vector3 OriginRotationPoint = new Vector3();
 
     [SerializeField]
@@ -49,15 +54,25 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public float Period = 1.0f;
 
+
     void Start()
     {
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         meshFilter.sharedMesh = Instantiate(myMesh);
         ModelSpaceVertices = meshFilter.sharedMesh.vertices;
-    }
+
+         MTransform = new MyVector3(UTransform.x, UTransform.y, UTransform.z);
+         MRotation = new MyVector3(URotation.x, URotation.y, URotation.z);
+         MScale = new MyVector3(UScale.x, UScale.y, UScale.z);
+}
 
     void Update()
     {
+        MTransform = new MyVector3(UTransform.x, UTransform.y, UTransform.z);
+        MRotation = new MyVector3(URotation.x, URotation.y, URotation.z);
+        MScale = new MyVector3(UScale.x, UScale.y, UScale.z);
+
+
         if (isMoon && ParentPlanet)
         {
             OriginRotationPoint = ParentPlanet.transform.position;
@@ -87,12 +102,19 @@ public class QuatMovement : MonoBehaviour
         
         MyVector3 newP = newK.GetAxis();
 
-        Matrix4by4 Transform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.transform.position); //Make all the transforms my own transforms instead of using unitys built in ones.
+        Matrix4by4 Transform = Matrix4by4.Identity;
+
+        if (ParentPlanet)
+        {
+             //Transform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector()); //Make all the transforms my own transforms instead of using unitys built in ones.
+            UTransform = newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector();
+        }
 
         //if(ParentPlanet)
         //{ transform.position = newP.ToUnityVector() + ParentPlanet.transform.position; }
         //else
         //{ transform.position = newP.ToUnityVector(); }
+        Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
 
         Vector3[] TransformedVertices = new Vector3[ModelSpaceVertices.Length];
 
@@ -101,7 +123,7 @@ public class QuatMovement : MonoBehaviour
         // Matrix4by4 T = myTransform;
         // Matrix4by4 R = yawMatrix * (axialTilt * rollMatrix);
 
-        Matrix4by4 TransformedMatrix = Transform * (RotationMatrix * Scale);// * (axialTilt * Scale);
+        Matrix4by4 TransformedMatrix = TranslationMatrix * (RotationMatrix * Scale);// * (axialTilt * Scale);
 
         for (int i = 0; i < TransformedVertices.Length; i++)
         {
@@ -115,6 +137,9 @@ public class QuatMovement : MonoBehaviour
 
         meshFilter.sharedMesh.RecalculateNormals();
         meshFilter.sharedMesh.RecalculateBounds();
+
+        
+       // UTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
 }

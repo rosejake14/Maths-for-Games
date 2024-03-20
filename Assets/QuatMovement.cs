@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
 public class QuatMovement : MonoBehaviour
 {
     [SerializeField]
-    public Vector3 UTransform = new Vector3(0, 0, 0);
+    public Vector3 UTransform = new Vector3();
     [SerializeField]
-    public Vector3 URotation = new Vector3(0, 0, 0);
+    public Vector3 URotation = new Vector3();
     [SerializeField]
-    public Vector3 UScale = new Vector3(0, 0, 0);
+    public Vector3 UScale = new Vector3();
 
     private MyVector3 MTransform;
     private MyVector3 MRotation;
     private MyVector3 MScale;
 
-[SerializeField]
-    Vector3 OriginRotationPoint = new Vector3();
+    private MyVector3 StartLocation = new MyVector3(0,0,0);
 
     [SerializeField]
     public float orbitSize = 1.0f;
@@ -39,7 +37,7 @@ public class QuatMovement : MonoBehaviour
     bool isMoon = false;
 
     [SerializeField]
-    GameObject ParentPlanet;
+    GameObject ParentPlanet = null;
 
     [SerializeField]
     float PlanetScale = 2.0f;
@@ -54,29 +52,42 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public float Period = 1.0f;
 
+    private bool OrbitIncreasing = false;
+
+    [SerializeField]
+    private float HeightMagnitude = 0.5f;
+
+    [SerializeField]
+    private float Frequency = 0.5f;
+
+    [SerializeField]
+    private bool isMoveable = true;
 
     void Start()
     {
-        MeshFilter meshFilter = GetComponent<MeshFilter>();
-        meshFilter.sharedMesh = Instantiate(myMesh);
-        ModelSpaceVertices = meshFilter.sharedMesh.vertices;
-
-         MTransform = new MyVector3(UTransform.x, UTransform.y, UTransform.z);
-         MRotation = new MyVector3(URotation.x, URotation.y, URotation.z);
-         MScale = new MyVector3(UScale.x, UScale.y, UScale.z);
-}
+        if (isMoveable)
+        {
+            MeshFilter meshFilter = GetComponent<MeshFilter>();
+            meshFilter.sharedMesh = Instantiate(myMesh);
+            ModelSpaceVertices = meshFilter.sharedMesh.vertices;
+        }
+        //Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
+       // TranslateObject(TranslationMatrix);
+    }
 
     void Update()
     {
+        
+
         MTransform = new MyVector3(UTransform.x, UTransform.y, UTransform.z);
         MRotation = new MyVector3(URotation.x, URotation.y, URotation.z);
         MScale = new MyVector3(UScale.x, UScale.y, UScale.z);
 
 
-        if (isMoon && ParentPlanet)
-        {
-            OriginRotationPoint = ParentPlanet.transform.position;
-        }
+        //if (isMoon && ParentPlanet)
+        //{
+        //    Vector3 OriginRotationPoint = ParentPlanet.transform.position;
+        //}
 
         //Quat Movement Rotations
         //Local Rotation Period (Axial Tilt)
@@ -90,6 +101,11 @@ public class QuatMovement : MonoBehaviour
 
 
         //World Rotation Period (Orbit)
+
+        if (OrbitIncreasing)
+        {
+            //orbitSize += .1f * Time.deltaTime;
+        }
 
         angle += Time.deltaTime * Period;
         Quat q = new Quat(angle, new MyVector3(0, 1, 0));
@@ -108,6 +124,7 @@ public class QuatMovement : MonoBehaviour
         {
              //Transform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector()); //Make all the transforms my own transforms instead of using unitys built in ones.
             UTransform = newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector();
+            UTransform = new Vector3(UTransform.x, HeightMagnitude * Mathf.Sin(Time.time * Frequency) - 1, UTransform.z);
         }
 
         //if(ParentPlanet)
@@ -116,7 +133,7 @@ public class QuatMovement : MonoBehaviour
         //{ transform.position = newP.ToUnityVector(); }
         Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
 
-        Vector3[] TransformedVertices = new Vector3[ModelSpaceVertices.Length];
+        
 
         Matrix4by4 Scale = Matrix4by4.CreateScaleMatrix(PlanetScale);
 
@@ -124,6 +141,22 @@ public class QuatMovement : MonoBehaviour
         // Matrix4by4 R = yawMatrix * (axialTilt * rollMatrix);
 
         Matrix4by4 TransformedMatrix = TranslationMatrix * (RotationMatrix * Scale);// * (axialTilt * Scale);
+
+        if (isMoveable)
+        {
+            TranslateObject(TransformedMatrix);
+        }
+        
+
+        // UTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+
+        
+    }
+
+    void TranslateObject(Matrix4by4 TransformedMatrix)
+    {
+        Vector3[] TransformedVertices = new Vector3[ModelSpaceVertices.Length];
 
         for (int i = 0; i < TransformedVertices.Length; i++)
         {
@@ -137,9 +170,5 @@ public class QuatMovement : MonoBehaviour
 
         meshFilter.sharedMesh.RecalculateNormals();
         meshFilter.sharedMesh.RecalculateBounds();
-
-        
-       // UTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
-
 }

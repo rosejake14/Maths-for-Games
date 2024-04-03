@@ -35,21 +35,20 @@ public class MainCam : MonoBehaviour
     [SerializeField]
     int followingPlanet = -1;
     [SerializeField]
-    GameObject Planet1;
-    [SerializeField]
-    GameObject Planet2;
-    [SerializeField]
-    GameObject Planet3;
+    GameObject[] Planets;
 
     UnityEngine.Vector2 lastMousePos = new UnityEngine.Vector2(0, 0);
 
+    int selectedPlanet = 0;
+
     void Start()
     {
+        LinearTarget = OriginTarget;
         //MyPosition = new MyVector3(Position.x, Position.y, Position.z);
         //LinearTarget = OriginTarget;
-       // MeshFilter meshFilter = GetComponent<MeshFilter>();
-       // meshFilter.sharedMesh = Instantiate(myMesh);
-       // ModelSpaceVertices = meshFilter.sharedMesh.vertices;
+        // MeshFilter meshFilter = GetComponent<MeshFilter>();
+        // meshFilter.sharedMesh = Instantiate(myMesh);
+        // ModelSpaceVertices = meshFilter.sharedMesh.vertices;
     }
 
     void Update()
@@ -64,29 +63,51 @@ public class MainCam : MonoBehaviour
 
         transform.eulerAngles = new UnityEngine.Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
 
-        if (Input.GetKeyDown(KeyCode.Escape)) { followingPlanet = -1; LinearInterpolateSpeed = 3.0f;  }
-        if (Input.GetKeyDown(KeyCode.E)) { followingPlanet = 1; LinearInterpolateSpeed = Planet1.GetComponent<QuatMovement>().Period * 10; }
-        if (Input.GetKeyDown(KeyCode.R)) { followingPlanet = 2; LinearInterpolateSpeed = Planet2.GetComponent<QuatMovement>().Period * 10; }
-        if (Input.GetKeyDown(KeyCode.T)) { followingPlanet = 3; LinearInterpolateSpeed = Planet3.GetComponent<QuatMovement>().Period * 10; }
-
-        switch (followingPlanet)
+        if (Input.GetKeyDown(KeyCode.Escape)) { followingPlanet = -1; LinearInterpolateSpeed = 3.0f; }
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            case (-1):
-                LinearTarget = OriginTarget; 
-                break;
-            case (1):
-                LinearTarget = Planet1.GetComponent<QuatMovement>().UTransform;
-                break;
-            case (2):
-                LinearTarget = Planet2.GetComponent<QuatMovement>().UTransform;
-                
-                break;
-            case (3):
-                LinearTarget = Planet3.GetComponent<QuatMovement>().UTransform;
-                break;
-            default:
-                break;
+            followingPlanet = 1;
+            selectedPlanet++;
+            if (selectedPlanet > Planets.Length - 1)
+            {
+                selectedPlanet = 0;
+            }
+            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().Period * 15;
+            //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            followingPlanet = 2;
+            selectedPlanet--;
+            if (selectedPlanet < 0)
+            {
+                selectedPlanet = Planets.Length - 1;
+            }
+            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().Period * 15;
+            //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
+        }
+        
+            LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
+        
+        
+        //switch (selectedPlanet)
+        //{
+        //    case (-1):
+        //        LinearTarget = OriginTarget;
+        //        break;
+        //    case (1):
+        //        LinearTarget = Planet1.GetComponent<QuatMovement>().UTransform;
+        //        break;
+        //    case (2):
+        //        LinearTarget = Planet2.GetComponent<QuatMovement>().UTransform;
+
+        //        break;
+        //    case (3):
+        //        LinearTarget = Planet3.GetComponent<QuatMovement>().UTransform;
+        //        break;
+        //    default:
+        //        break;
+        //}
 
 
         //Rotation.x += Time.deltaTime * rotationSpeed;

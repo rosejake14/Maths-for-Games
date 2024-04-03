@@ -37,6 +37,7 @@ public class Planets : MonoBehaviour
     {
         foreach (GameObject planet in PlanetList)
         {
+
             planet.GetComponent<QuatMovement>().Period *= 0.8f;
         }
     }

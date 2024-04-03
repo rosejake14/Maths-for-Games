@@ -63,6 +63,8 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     private bool isMoveable = true;
 
+    bool ParentAssigned = false;
+
     void Start()
     {
         if (isMoveable)
@@ -120,20 +122,30 @@ public class QuatMovement : MonoBehaviour
 
         Matrix4by4 Transform = Matrix4by4.Identity;
 
-        if (ParentPlanet)
+        Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(new Vector3(0,0,0));
+
+        if (ParentAssigned)
         {
              //Transform = Matrix4by4.CreateTranslationMatrix(newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector()); //Make all the transforms my own transforms instead of using unitys built in ones.
             UTransform = newP.ToUnityVector() + ParentPlanet.GetComponent<QuatMovement>().MTransform.ToUnityVector();
             UTransform = new Vector3(UTransform.x, HeightMagnitude * Mathf.Sin(Time.time * Frequency) - 1, UTransform.z);
         }
-
+        else
+        {
+            if (ParentPlanet)
+            {
+                ParentAssigned = true;
+            }
+        }
+        TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
         //if(ParentPlanet)
         //{ transform.position = newP.ToUnityVector() + ParentPlanet.transform.position; }
         //else
         //{ transform.position = newP.ToUnityVector(); }
-        Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
 
-        
+
+
+
 
         Matrix4by4 Scale = Matrix4by4.CreateScaleMatrix(PlanetScale);
 

@@ -6,12 +6,18 @@ public class Planets : MonoBehaviour
 {
     [SerializeField]
     public GameObject[] PlanetList;
-    [SerializeField]
-    public float SimulationSpeed = 1.0f;
+    //[SerializeField]
+    //public float SimulationSpeed = 1.0f;
     [SerializeField]
     private bool IncreaseTimeWarp = false;
     [SerializeField]
     private bool DecreaseTimeWarp = true;
+
+    [Range(0.0f, 10.0f)]
+    public float SimulationSpeed;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +27,21 @@ public class Planets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IncreaseTimeWarp)
+        //if (IncreaseTimeWarp)
+        //{
+        //    IncreaseTimeWarp = false;
+        //    Increase();
+        //}
+        //if (DecreaseTimeWarp)
+        //{
+        //    DecreaseTimeWarp = false;
+        //    Decrease();
+        //}
+
+        foreach (GameObject planet in PlanetList)
         {
-            IncreaseTimeWarp = false;
-            Increase();
-        }
-        if (DecreaseTimeWarp)
-        {
-            DecreaseTimeWarp = false;
-            Decrease();
+            planet.GetComponent<QuatMovement>().Period = planet.GetComponent<QuatMovement>().PeriodNoTimeWarp * SimulationSpeed;
+            planet.GetComponent<QuatMovement>().RotationPeriod = planet.GetComponent<QuatMovement>().RotationPeriodNoTimeWarp * SimulationSpeed;
         }
     }
 
@@ -37,7 +49,6 @@ public class Planets : MonoBehaviour
     {
         foreach (GameObject planet in PlanetList)
         {
-
             planet.GetComponent<QuatMovement>().Period *= 0.8f;
         }
     }

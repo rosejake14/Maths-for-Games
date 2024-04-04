@@ -31,8 +31,8 @@ public class QuatMovement : MonoBehaviour
     float RotationAngle = 0f;
 
     [SerializeField]
-    float RotationPeriod = 1.0f;
-
+    public float RotationPeriod = 1.0f;
+    public float RotationPeriodNoTimeWarp;
     [SerializeField]
     bool isMoon = false;
 
@@ -51,6 +51,8 @@ public class QuatMovement : MonoBehaviour
 
     [SerializeField]
     public float Period = 1.0f;
+
+    public float PeriodNoTimeWarp;
 
     private bool OrbitIncreasing = false;
 
@@ -73,8 +75,10 @@ public class QuatMovement : MonoBehaviour
             meshFilter.sharedMesh = Instantiate(myMesh);
             ModelSpaceVertices = meshFilter.sharedMesh.vertices;
         }
+        PeriodNoTimeWarp = Period;
+        RotationPeriodNoTimeWarp = RotationPeriod;
         //Matrix4by4 TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
-       // TranslateObject(TranslationMatrix);
+        // TranslateObject(TranslationMatrix);
     }
 
     void Update()
@@ -110,7 +114,7 @@ public class QuatMovement : MonoBehaviour
         }
 
         angle += Time.deltaTime * Period;
-        Quat q = new Quat(angle, new MyVector3(0, 1, 0));
+        Quat q = new Quat(angle, new MyVector3(0, 1, 0.5f));
         
         MyVector3 p = new MyVector3(orbitSize, 0, 0);
 

@@ -41,9 +41,16 @@ public class MainCam : MonoBehaviour
 
     int selectedPlanet = 0;
 
+
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip[] wooshSounds;
+    
+
     void Start()
     {
         LinearTarget = OriginTarget;
+        audioSource = GetComponent<AudioSource>();
         //MyPosition = new MyVector3(Position.x, Position.y, Position.z);
         //LinearTarget = OriginTarget;
         // MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -72,7 +79,8 @@ public class MainCam : MonoBehaviour
             {
                 selectedPlanet = 0;
             }
-            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().Period * 15;
+            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 15;
+            audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
             //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -83,7 +91,8 @@ public class MainCam : MonoBehaviour
             {
                 selectedPlanet = Planets.Length - 1;
             }
-            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().Period * 15;
+            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 15;
+            audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
             //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
         }
         

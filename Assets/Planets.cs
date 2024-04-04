@@ -8,10 +8,10 @@ public class Planets : MonoBehaviour
     public GameObject[] PlanetList;
     //[SerializeField]
     //public float SimulationSpeed = 1.0f;
-    [SerializeField]
-    private bool IncreaseTimeWarp = false;
-    [SerializeField]
-    private bool DecreaseTimeWarp = true;
+    //[SerializeField]
+    //private bool IncreaseTimeWarp = false;
+    //[SerializeField]
+    //private bool DecreaseTimeWarp = true;
 
     [Range(0.0f, 10.0f)]
     public float SimulationSpeed;

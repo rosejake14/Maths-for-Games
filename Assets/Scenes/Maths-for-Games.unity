@@ -23,9 +23,9 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.02
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 373a9edf101159c4ba9feca2528d6e92, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -148,20 +148,23 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 200
-  axis: 1
+  orbitSize: 450
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 0.54
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 7.2
   myMesh: {fileID: 79284562190012649, guid: a59bf4a8183fd804e97809785c990c83, type: 3}
   axialTiltAngle: 10
-  Period: 0.45
+  Period: 0.023
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Ert is the newest to this Solar System, it's covered mostly
+    in rock and has microorganisms developing.
 --- !u!1 &61267161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6818884641722200439, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
@@ -187,20 +190,226 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 175
-  axis: 1
+  orbitSize: 300
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 1.81
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 4
+  PlanetScale: 5.2
   myMesh: {fileID: 187021537286713576, guid: 571de780353b9a246a7853150ba97f17, type: 3}
   axialTiltAngle: 10
-  Period: 0.09
+  Period: 0.06
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: '!ERROR: DATA UNAVAILABE!'
+--- !u!1 &124478516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124478517}
+  - component: {fileID: 124478519}
+  - component: {fileID: 124478518}
+  m_Layer: 5
+  m_Name: PLANETDESCTEXT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &124478517
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124478516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.007739, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1120994686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &124478518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124478516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'PLANET DESCRIPTION
+
+    PLANET DESCRIPTION
+
+    PLANET DESCRIPTION
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294115299
+  m_fontColor: {r: 0.8915094, g: 1, b: 0.94792825, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 26.22
+  m_fontSizeBase: 26.22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -154.75522, y: 0, z: -160.45854, w: -27.819153}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &124478519
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124478516}
+  m_CullTransparentMesh: 1
+--- !u!1001 &167334129
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 61267162}
+    m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_Name
+      value: Afthan Moon2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729186189}
+  m_SourcePrefab: {fileID: 100100000, guid: fa2d18e45daba064082473197365e767, type: 3}
 --- !u!1 &275836772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6472483355967693527, guid: 8847ff7f8a6047d42b63cd0818890f75, type: 3}
@@ -226,20 +435,24 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 150
-  axis: 1
+  orbitSize: 220
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 1.27
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 3
   myMesh: {fileID: -6307764982272313685, guid: c5b5ade88f278d045b61bc9fdcd5d296, type: 3}
   axialTiltAngle: 10
-  Period: 0.12
+  Period: 0.05
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Our most unknown planet. Bright sparks of light have been seen
+    to emit from this planet, this is due to a special kind of meteoride material
+    that we wish to get our hands on soon.
 --- !u!1001 &325769210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +511,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7564590163748258660, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2081484082}
+    - targetCorrespondingSourceObject: {fileID: 7564590163748258660, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139098212}
+    - targetCorrespondingSourceObject: {fileID: 7564590163748258660, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 803016900}
+    - targetCorrespondingSourceObject: {fileID: 7564590163748258660, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 729186188}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6818884641722200439, guid: 7ded786f373b83b47b63f3a92f180f4b, type: 3}
       insertIndex: -1
@@ -392,19 +614,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 5
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: 0.64
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 1783647385}
   PlanetScale: 1
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 4
+  Period: 0.65
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1 &623357661
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &623357662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 61267162}
     m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
       propertyPath: m_Name
       value: Afthan Moon
@@ -610,20 +838,64 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 100
-  axis: 1
+  orbitSize: 130
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 0.89
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 2.9
   myMesh: {fileID: 5937002020798762559, guid: d1cde6c2fe96ec041a4a689ef791c202, type: 3}
   axialTiltAngle: 10
-  Period: 0.2
+  Period: 0.055
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Containing a vast biodiverse wildlife, Montilogue has the most
+    amount of wildlife and nature to any other planet.
+--- !u!1 &729186187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 167334129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &729186188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 167334129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &729186189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729186187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UTransform: {x: 75.40316, y: 0, z: -58.294067}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
+  orbitSize: 9
+  angle: 83.802414
+  RotationAngle: 73.48009
+  RotationPeriod: 0.23
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
+  ParentPlanet: {fileID: 61267161}
+  PlanetScale: 2
+  myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
+  axialTiltAngle: 10
+  Period: 2.64
+  PeriodNoTimeWarp: 0
+  HeightMagnitude: 2.05
+  Frequency: 2.5
+  isMoveable: 1
+  PlanetDescription: 
 --- !u!1 &731981915
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +909,7 @@ GameObject:
   - component: {fileID: 731981917}
   - component: {fileID: 731981919}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +924,7 @@ Transform:
   m_GameObject: {fileID: 731981915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -73.3}
+  m_LocalPosition: {x: -0, y: -0, z: -133.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -729,112 +1001,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da627347bd44bb64ba4ae203464fc717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &815511284
+--- !u!1 &803016899 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1710474824}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 815511288}
-  - component: {fileID: 815511287}
-  - component: {fileID: 815511286}
-  - component: {fileID: 815511285}
-  m_Layer: 0
-  m_Name: w
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &815511285
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815511284}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &815511286
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815511284}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f2247bf0094da234788bc0987b8e5659, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &815511287
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815511284}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &815511288
+--- !u!4 &803016900 stripped
 Transform:
+  m_CorrespondingSourceObject: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1710474824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &803016901
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815511284}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3685, y: 0, z: 0}
-  m_LocalScale: {x: 5.4901, y: 5.4901, z: 5.4901}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 803016899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UTransform: {x: 75.40316, y: 0, z: -58.294067}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
+  orbitSize: 8.5
+  angle: 83.802414
+  RotationAngle: 73.48009
+  RotationPeriod: -0.26
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
+  ParentPlanet: {fileID: 61267161}
+  PlanetScale: 0.53
+  myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
+  axialTiltAngle: 10
+  Period: 0.55
+  PeriodNoTimeWarp: 0
+  HeightMagnitude: 2.77
+  Frequency: 0.46
+  isMoveable: 1
+  PlanetDescription: 
 --- !u!1 &855343742
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,8 +1088,6 @@ MonoBehaviour:
   - {fileID: 26213397}
   - {fileID: 1117120491}
   SimulationSpeed: 1
-  IncreaseTimeWarp: 0
-  DecreaseTimeWarp: 1
 --- !u!4 &855343744
 Transform:
   m_ObjectHideFlags: 0
@@ -922,19 +1127,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 0
-  axis: 0
   angle: 0
   RotationAngle: 0
   RotationPeriod: 0
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 0}
   PlanetScale: 0
   myMesh: {fileID: 0}
   axialTiltAngle: 0
   Period: 0
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0
   Frequency: 0
   isMoveable: 0
+  PlanetDescription: 
 --- !u!1001 &872010614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,20 +1227,23 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 75
-  axis: 1
+  orbitSize: 100
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 1.09
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 3
   myMesh: {fileID: -7086224477920310817, guid: 9b91237d15a06a9448c67ce98440b8b7, type: 3}
   axialTiltAngle: 10
-  Period: 0.3
+  Period: 0.01
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Small microorganisms are found here with boiling lakes scattered
+    across. This planet provides no use to humas as of yet.
 --- !u!1001 &991940862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,16 +1296,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun
       objectReference: {fileID: 0}
+    - target: {fileID: 4128880732710639038, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128880732710639038, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128880732710639038, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128880732710639038, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1669486304266081137, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1315497117}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2409545828415709538, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1017766901}
+      addedObject: {fileID: 1017766900}
     - targetCorrespondingSourceObject: {fileID: 2409545828415709538, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1017766900}
+      addedObject: {fileID: 1017766904}
   m_SourcePrefab: {fileID: 100100000, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
 --- !u!1 &1017766898 stripped
 GameObject:
@@ -1123,81 +1352,117 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 0
-  axis: 0
   angle: 0
   RotationAngle: 0
-  RotationPeriod: 0
+  RotationPeriod: 0.1
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 0}
   PlanetScale: 30
   myMesh: {fileID: 2949238878705562272, guid: ad54985f2aa4175478d6eeab7f2fab43, type: 3}
   axialTiltAngle: 0
   Period: 0
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0
   Frequency: 0
   isMoveable: 1
---- !u!108 &1017766901
-Light:
+  PlanetDescription: 
+--- !u!82 &1017766904
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017766898}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bd3ea31071d40bc4daba4194701d619a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 130
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1052463734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,19 +1552,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 5
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: 0.61
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 693489623}
   PlanetScale: 1.3
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 6
+  Period: 3.46
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1 &1117120491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
@@ -1326,19 +1593,165 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 10
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 2.55
-  isMoon: 1
+  RotationPeriod: 0.47
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 26213397}
   PlanetScale: 3.69
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 7
+  Period: 2.6
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
+--- !u!1 &1120994682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120994686}
+  - component: {fileID: 1120994685}
+  - component: {fileID: 1120994684}
+  - component: {fileID: 1120994683}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1120994683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120994682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1120994684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120994682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1120994685
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120994682}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 731981918}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1120994686
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120994682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1693866900}
+  - {fileID: 124478517}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1 &1139098211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1583955862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1139098212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1583955862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1139098213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139098211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UTransform: {x: 75.40316, y: 0, z: -58.294067}
+  URotation: {x: 0, y: 0, z: 0}
+  UScale: {x: 0, y: 0, z: 0}
+  orbitSize: 7
+  angle: 83.802414
+  RotationAngle: 73.48009
+  RotationPeriod: -0.26
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
+  ParentPlanet: {fileID: 61267161}
+  PlanetScale: 0.33
+  myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
+  axialTiltAngle: 10
+  Period: -3.7
+  PeriodNoTimeWarp: 0
+  HeightMagnitude: 0.5
+  Frequency: 0.5
+  isMoveable: 1
+  PlanetDescription: 
 --- !u!43 &1191261356
 Mesh:
   m_ObjectHideFlags: 0
@@ -1523,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1274091689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,7 +2047,7 @@ GameObject:
   - component: {fileID: 1315497117}
   - component: {fileID: 1315497116}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sun Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,11 +2062,11 @@ Light:
   m_GameObject: {fileID: 1315497115}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Color: {r: 0.9528302, g: 0.5904237, b: 0.22022964, a: 1}
+  m_Intensity: 3
+  m_Range: 5000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1694,7 +2107,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2.17
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -1711,11 +2124,11 @@ Transform:
   m_GameObject: {fileID: 1315497115}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1017766899}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1341356668
 PrefabInstance:
@@ -1725,6 +2138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 275836773}
     m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
       propertyPath: m_Name
       value: Pologie Moon
@@ -1803,19 +2220,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 5
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: 0.46
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 921839925}
   PlanetScale: 0.3
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 10
+  Period: 5.15
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1001 &1463099293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1942,6 +2361,70 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1783647386}
   m_SourcePrefab: {fileID: 100100000, guid: 642454a265967e1468360a08fc66db60, type: 3}
+--- !u!1001 &1583955862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 61267162}
+    m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_Name
+      value: Afthan Moon3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139098213}
+  m_SourcePrefab: {fileID: 100100000, guid: fa2d18e45daba064082473197365e767, type: 3}
 --- !u!1 &1585952909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6010707046325030202, guid: 4d255955e3a764a45a48e9945aa2adf9, type: 3}
@@ -1967,20 +2450,92 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 125
-  axis: 1
+  orbitSize: 190
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: -0.62
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 12
   myMesh: {fileID: -7601024780909281701, guid: 5bc49bf440c7b6f438104d344e0d4f6e, type: 3}
   axialTiltAngle: 10
-  Period: 0.6
+  Period: 0.065
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Being the middleground of the solar system, Tendra is the closest
+    we have found to Earth. This is where we plan to set up our camp. There is also
+    signs of extraterestrial life here, more research is to come.
+--- !u!1 &1674890830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674890833}
+  - component: {fileID: 1674890832}
+  - component: {fileID: 1674890831}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1674890831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674890830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1674890832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674890830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1674890833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674890830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1682660589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2057,8 +2612,9 @@ GameObject:
   - component: {fileID: 1691537493}
   - component: {fileID: 1691537492}
   - component: {fileID: 1691537496}
+  - component: {fileID: 1691537497}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2144,7 +2700,7 @@ Transform:
   m_GameObject: {fileID: 1691537490}
   serializedVersion: 2
   m_LocalRotation: {x: -0.30782744, y: -0.3078313, z: -0.105993554, w: 0.89400643}
-  m_LocalPosition: {x: -6.374153e-16, y: -6.851721e-16, z: 20.00001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.11612, y: 0.11612, z: 0.11612}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2163,11 +2719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87971bc59f7a87f458b319771cb59ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinearTarget: {x: -10, y: 6, z: -9}
-  LinearInterpolate: 1
-  LinearInterpolateSpeed: 5
-  OriginTarget: {x: 0, y: 100, z: 0}
-  followingPlanet: 1
   Planets:
   - {fileID: 1783647385}
   - {fileID: 921839925}
@@ -2176,6 +2727,306 @@ MonoBehaviour:
   - {fileID: 275836772}
   - {fileID: 61267161}
   - {fileID: 26213397}
+  wooshSounds:
+  - {fileID: 8300000, guid: d4a8c0b82d7b6dd4ba71d07a8ae49ba9, type: 3}
+  - {fileID: 8300000, guid: 7796d2b7764ce2a4098f51e798b812bd, type: 3}
+  MenuOpenSound: {fileID: 8300000, guid: f2bb3f9547a32c04f803ad2b338d9e80, type: 3}
+--- !u!82 &1691537497
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691537490}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.838
+  m_Pitch: 1.46
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.758
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.867
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1693866899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693866900}
+  - component: {fileID: 1693866902}
+  - component: {fileID: 1693866901}
+  m_Layer: 5
+  m_Name: PLANETNAMETEXT
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1693866900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693866899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.51, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1120994686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -71.25}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1693866901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693866899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'PLANET NAME
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4293918573
+  m_fontColor: {r: 0.4292453, g: 1, b: 0.93617207, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 37.8
+  m_fontSizeBase: 37.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -154.75522, y: 0, z: -160.45854, w: 53.579254}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1693866902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693866899}
+  m_CullTransparentMesh: 1
+--- !u!1001 &1710474824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 61267162}
+    m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_Name
+      value: Afthan Moon4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 803016901}
+  m_SourcePrefab: {fileID: 100100000, guid: fa2d18e45daba064082473197365e767, type: 3}
 --- !u!1001 &1774714413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2316,20 +3167,23 @@ MonoBehaviour:
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
   URotation: {x: 0, y: 0.7, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 50
-  axis: 1
+  orbitSize: 70
   angle: 60.32606
   RotationAngle: 167.16753
-  RotationPeriod: 3.79
+  RotationPeriod: 0.5
+  RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
   PlanetScale: 5
   myMesh: {fileID: 3745490167340057536, guid: 16eb1ce9abd69ec48bc01307fd93ad1a, type: 3}
   axialTiltAngle: 10
-  Period: 0.1
+  Period: 0.03
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: Laval mobs have been found here and are distincly formed of
+    moisture and meteoride matter.
 --- !u!4 &1783647389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2663860894798233923, guid: 642454a265967e1468360a08fc66db60, type: 3}
@@ -2361,19 +3215,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 9.45
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: 0.1
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 1585952909}
   PlanetScale: 2
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 5
+  Period: 3.01
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1 &1860291065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
@@ -2400,19 +3256,21 @@ MonoBehaviour:
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
   orbitSize: 12
-  axis: 1
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: 0.29
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 275836772}
   PlanetScale: 1
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 3
+  Period: 2.45
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1001 &1902242651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2484,6 +3342,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26213398}
     m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
       propertyPath: m_Name
       value: Ert Moon
@@ -2621,27 +3483,29 @@ MonoBehaviour:
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
   URotation: {x: 0, y: 0, z: 0}
   UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 7
-  axis: 1
+  orbitSize: 5
   angle: 83.802414
   RotationAngle: 73.48009
-  RotationPeriod: 1
-  isMoon: 1
+  RotationPeriod: -0.26
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
   ParentPlanet: {fileID: 61267161}
-  PlanetScale: 2
+  PlanetScale: 1.08
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
-  Period: 6
+  Period: -2.78
+  PeriodNoTimeWarp: 0
   HeightMagnitude: 0.5
   Frequency: 0.5
   isMoveable: 1
+  PlanetDescription: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1315497117}
   - {fileID: 1274091693}
   - {fileID: 623357666}
-  - {fileID: 815511288}
   - {fileID: 1691537495}
   - {fileID: 855343744}
+  - {fileID: 1674890833}
+  - {fileID: 1120994686}

@@ -19,8 +19,8 @@ public class PlanetOrbitor : MonoBehaviour
     [SerializeField]
     float orbitalRadius = 1.0f;
 
-    [SerializeField]
-    float yawAngle = 1.0f;
+    //[SerializeField]
+    //float yawAngle = 1.0f;
 
     [SerializeField]
     float axialTiltAngle = 10.0f;

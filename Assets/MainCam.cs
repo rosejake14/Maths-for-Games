@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,19 +22,22 @@ public class MainCam : MonoBehaviour
     //[SerializeField]
     //float rotationSpeed = 0.0f;
 
-    [SerializeField]
+    
     private UnityEngine.Vector3 LinearTarget = new UnityEngine.Vector3();
-    [SerializeField]
+   
     bool LinearInterpolate = true;
-    [SerializeField]
+    
     float LinearInterpolateSpeed = 1.0f;
-    [SerializeField]
-    private UnityEngine.Vector3 OriginTarget = new UnityEngine.Vector3(0, 100, 0);
 
-    MyVector3 MyPosition;
+    UnityEngine.Vector3 OriginTarget = new UnityEngine.Vector3(0, 100, 0);
 
-    [SerializeField]
-    int followingPlanet = -1;
+    TMP_Text TMPTitle;
+    TMP_Text TMPDesc;
+    GameObject PlanetUI;
+
+    
+
+   
     [SerializeField]
     GameObject[] Planets;
 
@@ -45,12 +49,18 @@ public class MainCam : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]
     AudioClip[] wooshSounds;
-    
+    [SerializeField]
+    AudioClip MenuOpenSound;
 
     void Start()
     {
         LinearTarget = OriginTarget;
         audioSource = GetComponent<AudioSource>();
+
+        TMPTitle = GameObject.Find("PLANETNAMETEXT").GetComponent<TMP_Text>();
+        TMPDesc = GameObject.Find("PLANETDESCTEXT").GetComponent<TMP_Text>();
+        PlanetUI = GameObject.Find("Canvas");
+        PlanetUI.SetActive(false);
         //MyPosition = new MyVector3(Position.x, Position.y, Position.z);
         //LinearTarget = OriginTarget;
         // MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -70,34 +80,57 @@ public class MainCam : MonoBehaviour
 
         transform.eulerAngles = new UnityEngine.Vector3(transform.eulerAngles.x - mouseDelta.y, transform.eulerAngles.y + mouseDelta.x, 0);
 
-        if (Input.GetKeyDown(KeyCode.Escape)) { followingPlanet = -1; LinearInterpolateSpeed = 3.0f; }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.Escape)) 
         {
-            followingPlanet = 1;
-            selectedPlanet++;
-            if (selectedPlanet > Planets.Length - 1)
-            {
-                selectedPlanet = 0;
-            }
-            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 15;
-            audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
-            //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
+            LinearInterpolateSpeed = 100.0f; 
+            LinearTarget = OriginTarget;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        else
         {
-            followingPlanet = 2;
-            selectedPlanet--;
-            if (selectedPlanet < 0)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                selectedPlanet = Planets.Length - 1;
+                PlanetUI.SetActive(false);
+                selectedPlanet++;
+                if (selectedPlanet > Planets.Length - 1)
+                {
+                    selectedPlanet = 0;
+                }
+                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 50;
+                audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
+                //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
             }
-            LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 15;
-            audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
-            //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
-        }
-        
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                PlanetUI.SetActive(false);
+                //followingPlanet = 2;
+                selectedPlanet--;
+                if (selectedPlanet < 0)
+                {
+                    selectedPlanet = Planets.Length - 1;
+                }
+                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 50;
+                audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
+                //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
+            }
+
             LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
+        }
         
+        if(Input.GetKeyDown(KeyCode.M)) 
+        {
+            if (!PlanetUI.active)
+            {
+                PlanetUI.SetActive(true);
+                audioSource.PlayOneShot(MenuOpenSound);
+                TMPTitle.SetText(Planets[selectedPlanet].name);
+                TMPDesc.SetText(Planets[selectedPlanet].GetComponent<QuatMovement>().PlanetDescription);
+            }
+            else
+            {
+                PlanetUI.SetActive(false);
+            }
+            
+        }
         
         //switch (selectedPlanet)
         //{
@@ -180,7 +213,7 @@ public class MainCam : MonoBehaviour
             {
                 //LinearTarget = newLinLocation();
             }
-            MyPosition = new MyVector3(transform.position.x, transform.position.y, transform.position.z);
+            MyVector3 MyPosition = new MyVector3(transform.position.x, transform.position.y, transform.position.z);
         }
     //    else
     //    {

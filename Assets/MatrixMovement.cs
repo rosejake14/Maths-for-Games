@@ -27,12 +27,12 @@ public class MatrixMovement : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 0.0f;
 
-    [SerializeField]
-    private Vector3 LinearTarget = new Vector3();
+    //[SerializeField]
+    //private Vector3 LinearTarget = new Vector3();
     [SerializeField]
     bool LinearInterpolate = false;
-    [SerializeField]
-    float LinearInterpolateSpeed = 1.0f;
+    //[SerializeField]
+    //float LinearInterpolateSpeed = 1.0f;
 
     MyVector3 MyPosition;
 

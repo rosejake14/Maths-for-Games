@@ -21,8 +21,8 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public float orbitSize = 1.0f;
 
-    [SerializeField]
-    public float axis = 1.0f;
+    
+    //public float axis = 1.0f;
 
     [SerializeField]
     float angle = 0f;
@@ -66,6 +66,9 @@ public class QuatMovement : MonoBehaviour
     private bool isMoveable = true;
 
     bool ParentAssigned = false;
+
+    [SerializeField]
+    public string PlanetDescription;
 
     void Start()
     {

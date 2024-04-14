@@ -5,19 +5,23 @@ using UnityEngine;
 public class Planets : MonoBehaviour
 {
     [SerializeField]
-    public GameObject[] PlanetList;
+    private GameObject GameCamera;
+
+    [SerializeField]
+    private GameObject[] PlanetList;
     //[SerializeField]
     //public float SimulationSpeed = 1.0f;
     //[SerializeField]
     //private bool IncreaseTimeWarp = false;
     //[SerializeField]
     //private bool DecreaseTimeWarp = true;
-
+    
+    [SerializeField]
     [Range(0.0f, 10.0f)]
-    public float SimulationSpeed;
+    private float SimulationSpeed;
 
     
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,7 @@ public class Planets : MonoBehaviour
             planet.GetComponent<QuatMovement>().Period = planet.GetComponent<QuatMovement>().PeriodNoTimeWarp * SimulationSpeed;
             planet.GetComponent<QuatMovement>().RotationPeriod = planet.GetComponent<QuatMovement>().RotationPeriodNoTimeWarp * SimulationSpeed;
         }
+        GameCamera.GetComponent<MainCam>().LinearIntSpeedMultiplier = GameCamera.GetComponent<MainCam>().LinearIntSpeedMultiplierNoTimeWarp * SimulationSpeed;
     }
 
     void Decrease()

@@ -1,30 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+
+//[Serializable]
+//public struct UnityTransformation
+//{
+//    [SerializeField] private Vector3 UPosition;
+//    [SerializeField] private Vector3 URotation ;
+//    [SerializeField] private Vector3 UScale;
+
+//    public Vector3 UnityPosition => UPosition;
+//    public Vector3 UnityRotation => URotation;
+//    public Vector3 UnityScale => UScale;
+//}
+
 public class QuatMovement : MonoBehaviour
 {
+//    [SerializeField] private UnityTransformation unityTransformation;
+
+
+
     [SerializeField]
     public Vector3 UTransform = new Vector3();
-    [SerializeField]
-    public Vector3 URotation = new Vector3();
-    [SerializeField]
-    public Vector3 UScale = new Vector3();
+    //[SerializeField]
+    //public Vector3 URotation = new Vector3();
+    //[SerializeField]
+    //public Vector3 UScale = new Vector3();
 
     private MyVector3 MTransform;
-    private MyVector3 MRotation;
-    private MyVector3 MScale;
+    //private MyVector3 MRotation;
+    //private MyVector3 MScale;
 
     private MyVector3 StartLocation = new MyVector3(0,0,0);
 
     [SerializeField]
     public float orbitSize = 1.0f;
 
-    
-    //public float axis = 1.0f;
-
-    [SerializeField]
     float angle = 0f;
 
     [SerializeField]
@@ -33,8 +48,8 @@ public class QuatMovement : MonoBehaviour
     [SerializeField]
     public float RotationPeriod = 1.0f;
     public float RotationPeriodNoTimeWarp;
-    [SerializeField]
-    bool isMoon = false;
+    //[SerializeField]
+    //bool isMoon = false;
 
     [SerializeField]
     GameObject ParentPlanet = null;
@@ -53,8 +68,6 @@ public class QuatMovement : MonoBehaviour
     public float Period = 1.0f;
 
     public float PeriodNoTimeWarp;
-
-    private bool OrbitIncreasing = false;
 
     [SerializeField]
     private float HeightMagnitude = 0.5f;
@@ -86,19 +99,8 @@ public class QuatMovement : MonoBehaviour
 
     void Update()
     {
-        
-
         MTransform = new MyVector3(UTransform.x, UTransform.y, UTransform.z);
-        MRotation = new MyVector3(URotation.x, URotation.y, URotation.z);
-        MScale = new MyVector3(UScale.x, UScale.y, UScale.z);
-
-
-        //if (isMoon && ParentPlanet)
-        //{
-        //    Vector3 OriginRotationPoint = ParentPlanet.transform.position;
-        //}
-
-        //Quat Movement Rotations
+        
         //Local Rotation Period (Axial Tilt)
         RotationAngle += Time.deltaTime * RotationPeriod;
 
@@ -109,15 +111,10 @@ public class QuatMovement : MonoBehaviour
         Matrix4by4 RotationMatrix = CombinedQuat.QuatToMatrix();
 
 
+
         //World Rotation Period (Orbit)
-
-        if (OrbitIncreasing)
-        {
-            //orbitSize += .1f * Time.deltaTime;
-        }
-
         angle += Time.deltaTime * Period;
-        Quat q = new Quat(angle, new MyVector3(0, 1, 0.5f));
+        Quat q = new Quat(angle, new MyVector3(0, 1, 0));
         
         MyVector3 p = new MyVector3(orbitSize, 0, 0);
 
@@ -145,19 +142,8 @@ public class QuatMovement : MonoBehaviour
             }
         }
         TranslationMatrix = Matrix4by4.CreateTranslationMatrix(UTransform);
-        //if(ParentPlanet)
-        //{ transform.position = newP.ToUnityVector() + ParentPlanet.transform.position; }
-        //else
-        //{ transform.position = newP.ToUnityVector(); }
-
-
-
-
-
+        
         Matrix4by4 Scale = Matrix4by4.CreateScaleMatrix(PlanetScale);
-
-        // Matrix4by4 T = myTransform;
-        // Matrix4by4 R = yawMatrix * (axialTilt * rollMatrix);
 
         Matrix4by4 TransformedMatrix = TranslationMatrix * (RotationMatrix * Scale);// * (axialTilt * Scale);
 
@@ -165,12 +151,6 @@ public class QuatMovement : MonoBehaviour
         {
             TranslateObject(TransformedMatrix);
         }
-        
-
-        // UTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
-
-        
     }
 
     void TranslateObject(Matrix4by4 TransformedMatrix)

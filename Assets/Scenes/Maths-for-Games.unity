@@ -146,16 +146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 450
-  angle: 60.32606
   RotationAngle: 167.16753
   RotationPeriod: 0.54
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 7.2
+  PlanetScale: 5
   myMesh: {fileID: 79284562190012649, guid: a59bf4a8183fd804e97809785c990c83, type: 3}
   axialTiltAngle: 10
   Period: 0.023
@@ -188,16 +185,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 300
-  angle: 60.32606
   RotationAngle: 167.16753
   RotationPeriod: 1.81
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 5.2
+  PlanetScale: 4
   myMesh: {fileID: 187021537286713576, guid: 571de780353b9a246a7853150ba97f17, type: 3}
   axialTiltAngle: 10
   Period: 0.06
@@ -206,6 +200,69 @@ MonoBehaviour:
   Frequency: 0.5
   isMoveable: 1
   PlanetDescription: '!ERROR: DATA UNAVAILABE!'
+--- !u!1001 &78716573
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 855343744}
+    m_Modifications:
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312837243298340745, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      propertyPath: m_Name
+      value: Faren
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1322270662}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7312837243298340745, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1126922649}
+  m_SourcePrefab: {fileID: 100100000, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
 --- !u!1 &124478516
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,16 +490,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 220
-  angle: 60.32606
+  orbitSize: 250
   RotationAngle: 167.16753
   RotationPeriod: 1.27
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 3
+  PlanetScale: 6
   myMesh: {fileID: -6307764982272313685, guid: c5b5ade88f278d045b61bc9fdcd5d296, type: 3}
   axialTiltAngle: 10
   Period: 0.05
@@ -611,16 +665,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 5
-  angle: 83.802414
+  orbitSize: 8.69
   RotationAngle: 73.48009
   RotationPeriod: 0.64
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1783647385}
-  PlanetScale: 1
+  PlanetScale: 1.52
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 0.65
@@ -836,16 +887,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 130
-  angle: 60.32606
+  orbitSize: 140
   RotationAngle: 167.16753
   RotationPeriod: 0.89
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 2.9
+  PlanetScale: 4.87
   myMesh: {fileID: 5937002020798762559, guid: d1cde6c2fe96ec041a4a689ef791c202, type: 3}
   axialTiltAngle: 10
   Period: 0.055
@@ -878,16 +926,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 9
-  angle: 83.802414
+  orbitSize: 13.4
   RotationAngle: 73.48009
   RotationPeriod: 0.23
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 61267161}
-  PlanetScale: 2
+  PlanetScale: 1
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 2.64
@@ -1024,16 +1069,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 8.5
-  angle: 83.802414
+  orbitSize: 9.7
   RotationAngle: 73.48009
   RotationPeriod: -0.26
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 61267161}
-  PlanetScale: 0.53
+  PlanetScale: 1.1
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 0.55
@@ -1052,7 +1094,6 @@ GameObject:
   m_Component:
   - component: {fileID: 855343744}
   - component: {fileID: 855343743}
-  - component: {fileID: 855343745}
   m_Layer: 0
   m_Name: SolarSystem
   m_TagString: Untagged
@@ -1072,6 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2025a1e3489808243be8c5e0d4ac2fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameCamera: {fileID: 1691537490}
   PlanetList:
   - {fileID: 1783647385}
   - {fileID: 372897734}
@@ -1085,8 +1127,13 @@ MonoBehaviour:
   - {fileID: 1860291065}
   - {fileID: 61267161}
   - {fileID: 2081484081}
+  - {fileID: 729186187}
+  - {fileID: 1139098211}
+  - {fileID: 803016899}
   - {fileID: 26213397}
   - {fileID: 1117120491}
+  - {fileID: 1126922647}
+  - {fileID: 1322270661}
   SimulationSpeed: 1
 --- !u!4 &855343744
 Transform:
@@ -1109,39 +1156,9 @@ Transform:
   - {fileID: 275836773}
   - {fileID: 61267162}
   - {fileID: 26213398}
+  - {fileID: 1126922648}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &855343745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855343742}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UTransform: {x: 0, y: 0, z: 0}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 0
-  angle: 0
-  RotationAngle: 0
-  RotationPeriod: 0
-  RotationPeriodNoTimeWarp: 0
-  isMoon: 0
-  ParentPlanet: {fileID: 0}
-  PlanetScale: 0
-  myMesh: {fileID: 0}
-  axialTiltAngle: 0
-  Period: 0
-  PeriodNoTimeWarp: 0
-  HeightMagnitude: 0
-  Frequency: 0
-  isMoveable: 0
-  PlanetDescription: 
 --- !u!1001 &872010614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1225,16 +1242,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 100
-  angle: 60.32606
   RotationAngle: 167.16753
   RotationPeriod: 1.09
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 1017766898}
-  PlanetScale: 3
+  PlanetScale: 6
   myMesh: {fileID: -7086224477920310817, guid: 9b91237d15a06a9448c67ce98440b8b7, type: 3}
   axialTiltAngle: 10
   Period: 0.01
@@ -1349,16 +1363,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 0, y: 0, z: 0}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 0
-  angle: 0
   RotationAngle: 0
   RotationPeriod: 0.1
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 0}
-  PlanetScale: 30
+  PlanetScale: 23
   myMesh: {fileID: 2949238878705562272, guid: ad54985f2aa4175478d6eeab7f2fab43, type: 3}
   axialTiltAngle: 0
   Period: 0
@@ -1549,16 +1560,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 5
-  angle: 83.802414
+  orbitSize: 8.13
   RotationAngle: 73.48009
   RotationPeriod: 0.61
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 693489623}
-  PlanetScale: 1.3
+  PlanetScale: 1.48
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 3.46
@@ -1590,16 +1598,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 10
-  angle: 83.802414
   RotationAngle: 73.48009
   RotationPeriod: 0.47
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 26213397}
-  PlanetScale: 3.69
+  PlanetScale: 1.5
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 2.6
@@ -1711,6 +1716,45 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1126922647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7312837243298340745, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+  m_PrefabInstance: {fileID: 78716573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1126922648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5991814328001342874, guid: aaebea5bc8c4d7245ac69a70ff70a057, type: 3}
+  m_PrefabInstance: {fileID: 78716573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126922649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126922647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UTransform: {x: -40.22982, y: 0, z: -29.691101}
+  orbitSize: 750
+  RotationAngle: 153.6
+  RotationPeriod: 0.03
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
+  ParentPlanet: {fileID: 1017766898}
+  PlanetScale: 10
+  myMesh: {fileID: 79284562190012649, guid: a59bf4a8183fd804e97809785c990c83, type: 3}
+  axialTiltAngle: 60.91
+  Period: 0.009
+  PeriodNoTimeWarp: 0
+  HeightMagnitude: 0.5
+  Frequency: 0.5
+  isMoveable: 1
+  PlanetDescription: Faren is the oldest planet on this solar system covered in asfalted
+    magenesiate. No life forms present.
 --- !u!1 &1139098211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
@@ -1734,16 +1778,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 7
-  angle: 83.802414
+  orbitSize: 7.43
   RotationAngle: 73.48009
   RotationPeriod: -0.26
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 61267161}
-  PlanetScale: 0.33
+  PlanetScale: 0.5
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: -3.7
@@ -2130,6 +2171,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1017766899}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1322270661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1895801121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1322270662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+  m_PrefabInstance: {fileID: 1895801121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1322270663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322270661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f34e95338afe44682815c231648932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UTransform: {x: 75.40316, y: 0, z: -58.294067}
+  orbitSize: 18.5
+  RotationAngle: 73.48009
+  RotationPeriod: 0.47
+  RotationPeriodNoTimeWarp: 0
+  isMoon: 0
+  ParentPlanet: {fileID: 1126922647}
+  PlanetScale: 1
+  myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
+  axialTiltAngle: 10
+  Period: 2.6
+  PeriodNoTimeWarp: 0
+  HeightMagnitude: 0.5
+  Frequency: 0.5
+  isMoveable: 1
+  PlanetDescription: 
 --- !u!1001 &1341356668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2217,16 +2296,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 5
-  angle: 83.802414
+  orbitSize: 8.33
   RotationAngle: 73.48009
   RotationPeriod: 0.46
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 921839925}
-  PlanetScale: 0.3
+  PlanetScale: 1.76
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 5.15
@@ -2448,10 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 190
-  angle: 60.32606
+  orbitSize: 200
   RotationAngle: 167.16753
   RotationPeriod: -0.62
   RotationPeriodNoTimeWarp: 0
@@ -2727,6 +2800,9 @@ MonoBehaviour:
   - {fileID: 275836772}
   - {fileID: 61267161}
   - {fileID: 26213397}
+  - {fileID: 1126922647}
+  LinearIntSpeedMultiplier: 80
+  LinearIntSpeedMultiplierNoTimeWarp: 80
   wooshSounds:
   - {fileID: 8300000, guid: d4a8c0b82d7b6dd4ba71d07a8ae49ba9, type: 3}
   - {fileID: 8300000, guid: 7796d2b7764ce2a4098f51e798b812bd, type: 3}
@@ -3165,10 +3241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: -40.22982, y: 0, z: -29.691101}
-  URotation: {x: 0, y: 0.7, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 70
-  angle: 60.32606
   RotationAngle: 167.16753
   RotationPeriod: 0.5
   RotationPeriodNoTimeWarp: 0
@@ -3212,10 +3285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
-  orbitSize: 9.45
-  angle: 83.802414
+  orbitSize: 9.63
   RotationAngle: 73.48009
   RotationPeriod: 0.1
   RotationPeriodNoTimeWarp: 0
@@ -3253,16 +3323,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 12
-  angle: 83.802414
   RotationAngle: 73.48009
   RotationPeriod: 0.29
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 275836772}
-  PlanetScale: 1
+  PlanetScale: 2
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: 2.45
@@ -3271,6 +3338,70 @@ MonoBehaviour:
   Frequency: 0.5
   isMoveable: 1
   PlanetDescription: 
+--- !u!1001 &1895801121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1126922648}
+    m_Modifications:
+    - target: {fileID: 4682870618786416198, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_Name
+      value: Faren Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970080307835830409, guid: fa2d18e45daba064082473197365e767, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6395164285616714394, guid: fa2d18e45daba064082473197365e767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1322270663}
+  m_SourcePrefab: {fileID: 100100000, guid: fa2d18e45daba064082473197365e767, type: 3}
 --- !u!1001 &1902242651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3481,16 +3612,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UTransform: {x: 75.40316, y: 0, z: -58.294067}
-  URotation: {x: 0, y: 0, z: 0}
-  UScale: {x: 0, y: 0, z: 0}
   orbitSize: 5
-  angle: 83.802414
   RotationAngle: 73.48009
   RotationPeriod: -0.26
   RotationPeriodNoTimeWarp: 0
   isMoon: 0
   ParentPlanet: {fileID: 61267161}
-  PlanetScale: 1.08
+  PlanetScale: 2
   myMesh: {fileID: -8409552953048741646, guid: d30cd376778b1644691bb75352f73365, type: 3}
   axialTiltAngle: 10
   Period: -2.78

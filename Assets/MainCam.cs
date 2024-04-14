@@ -27,7 +27,8 @@ public class MainCam : MonoBehaviour
    
     bool LinearInterpolate = true;
     
-    float LinearInterpolateSpeed = 1.0f;
+     float LinearInterpolateSpeed = 1.0f;
+    
 
     UnityEngine.Vector3 OriginTarget = new UnityEngine.Vector3(0, 100, 0);
 
@@ -45,6 +46,8 @@ public class MainCam : MonoBehaviour
 
     int selectedPlanet = 0;
 
+    public float LinearIntSpeedMultiplier;
+    public float LinearIntSpeedMultiplierNoTimeWarp = 50.0f;
 
     AudioSource audioSource;
     [SerializeField]
@@ -54,6 +57,7 @@ public class MainCam : MonoBehaviour
 
     void Start()
     {
+        LinearIntSpeedMultiplier = LinearIntSpeedMultiplierNoTimeWarp;
         LinearTarget = OriginTarget;
         audioSource = GetComponent<AudioSource>();
 
@@ -95,7 +99,7 @@ public class MainCam : MonoBehaviour
                 {
                     selectedPlanet = 0;
                 }
-                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 50;
+                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * LinearIntSpeedMultiplier;
                 audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
                 //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
             }
@@ -108,7 +112,7 @@ public class MainCam : MonoBehaviour
                 {
                     selectedPlanet = Planets.Length - 1;
                 }
-                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * 50;
+                LinearInterpolateSpeed = Planets[selectedPlanet].GetComponent<QuatMovement>().PeriodNoTimeWarp * LinearIntSpeedMultiplier;
                 audioSource.PlayOneShot(wooshSounds[Random.Range(0, wooshSounds.Length)]);
                 //LinearTarget = Planets[selectedPlanet].GetComponent<QuatMovement>().UTransform;
             }
